@@ -1,0 +1,148 @@
+@font-face {
+  font-family: MoneyHeist;
+  src: url(../font/MoneyHeist.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: MoneyHeist;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.active {
+  transform: translateY(-35%);
+}
+
+.wrapper {
+  height: 100%;
+  width: 100%;
+}
+.wrapper #difficulty {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.wrapper #difficulty h1 {
+  color: white;
+  font-size: 10vmin;
+  margin: -10vmin 0 15vmin 0;
+  letter-spacing: 0.5vmin;
+}
+.wrapper #difficulty button {
+  height: 8vmin;
+  width: 20vmin;
+  font-size: 4vmin;
+  border-radius: 5vmin;
+  background: white;
+  color: rgb(103, 9, 29);
+  margin-top: 5vh;
+  letter-spacing: 0.5vmin;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+  visibility: hidden;
+  border: none;
+}
+.wrapper #difficulty button:hover {
+  background: rgb(103, 9, 29);
+  color: white;
+}
+.wrapper #difficulty .choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper #difficulty .choices > div {
+  padding: 5vmin;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper #difficulty .choices > div .photos {
+  height: 20vmin;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+  z-index: 2;
+}
+.wrapper #difficulty .choices > div .photos:hover {
+  transform: translateY(-35%);
+}
+.wrapper #difficulty .choices > div h2 {
+  color: white;
+  position: absolute;
+  bottom: 5vmin;
+  font-size: 5vmin;
+  margin: 0 auto;
+  z-index: 1;
+  letter-spacing: 0.5vmin;
+}
+.wrapper .container {
+  height: 100vh;
+  width: 100vw;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.5), rgb(0, 0, 0)), url(../img/Money-Heist.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .container .title {
+  height: max-content;
+  width: max-content;
+  padding: 2vmin 2vmin;
+}
+.wrapper .container .title h1 {
+  color: white;
+  font-size: 20vmin;
+  text-align: center;
+  transition: 400ms ease-in-out;
+}
+.wrapper .container .title .second {
+  color: rgb(103, 9, 29);
+}
+.wrapper .container .start {
+  height: 8vmin;
+  width: 20vmin;
+  background: rgb(103, 9, 29);
+  border-radius: 5vmin;
+  border: none;
+  color: white;
+  font-size: 4vmin;
+  letter-spacing: 0.5vmin;
+  position: absolute;
+  transform: translateX(-120vw) translateY(-5vh);
+  transition: 750ms ease-in-out;
+  cursor: pointer;
+}
+.wrapper .container .start:hover {
+  color: rgb(103, 9, 29);
+  background: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #222;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(103, 9, 29);
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=style.css.map */
