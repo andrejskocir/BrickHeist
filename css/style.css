@@ -83,8 +83,8 @@ body {
 .wrapper #difficulty .choices > div h2 {
   color: white;
   position: absolute;
-  bottom: min(5vmin, 4em);
-  font-size: 5vmin;
+  bottom: 5vmin;
+  font-size: min(5vmin, 4em);
   margin: 0 auto;
   z-index: 1;
   letter-spacing: 0.5vmin;
