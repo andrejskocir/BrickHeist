@@ -38,6 +38,7 @@ body {
   font-size: 10vmin;
   margin: -10vmin 0 15vmin 0;
   letter-spacing: 0.5vmin;
+  text-align: center;
 }
 .wrapper #difficulty button {
   height: 8vmin;
@@ -71,7 +72,7 @@ body {
   align-items: center;
 }
 .wrapper #difficulty .choices > div .photos {
-  height: 20vmin;
+  width: max(100px, 20vw);
   cursor: pointer;
   transition: 200ms ease-in-out;
   z-index: 2;
@@ -82,7 +83,7 @@ body {
 .wrapper #difficulty .choices > div h2 {
   color: white;
   position: absolute;
-  bottom: 5vmin;
+  bottom: min(5vmin, 4em);
   font-size: 5vmin;
   margin: 0 auto;
   z-index: 1;
@@ -122,7 +123,7 @@ body {
   font-size: 4vmin;
   letter-spacing: 0.5vmin;
   position: absolute;
-  transform: translateX(-120vw) translateY(-5vh);
+  transform: translateX(-100vw) translateY(-5vh);
   transition: 750ms ease-in-out;
   cursor: pointer;
 }
@@ -143,6 +144,29 @@ body {
 ::-webkit-scrollbar-thumb {
   background: rgb(103, 9, 29);
   border-radius: 10px;
+}
+
+.scrollToTop {
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 100%;
+  background: rgb(103, 9, 29);
+  position: fixed;
+  bottom: 4vh;
+  right: 3vw;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.scrollToTop > * {
+  font-size: 3vmin !important;
+}
+
+.scrollToTop:hover {
+  background: white;
+  color: rgb(103, 9, 29);
 }
 
 /*# sourceMappingURL=style.css.map */

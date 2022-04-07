@@ -37,6 +37,7 @@ body
             font-size: 10vmin
             margin: -10vmin 0 15vmin 0
             letter-spacing: 0.5vmin
+            text-align: center
         button
             height: 8vmin
             width: 20vmin
@@ -65,7 +66,7 @@ body
             align-items: center
 
             .photos
-                height: 20vmin
+                width: max(100px,20vw)
                 cursor: pointer
                 transition: 200ms ease-in-out
                 z-index: 2
@@ -76,7 +77,7 @@ body
             h2
                 color: white
                 position: absolute
-                bottom: 5vmin
+                bottom: min(5vmin,4em)
                 font-size: 5vmin
                 margin: 0 auto
                 z-index: 1
@@ -113,7 +114,7 @@ body
             font-size: 4vmin
             letter-spacing: 0.5vmin
             position: absolute
-            transform: translateX(-120vw) translateY(-5vh)
+            transform: translateX(-100vw) translateY(-5vh)
             transition: 750ms ease-in-out
             cursor: pointer
 
@@ -131,3 +132,22 @@ body
 ::-webkit-scrollbar-thumb
     background: $base-color
     border-radius: 10px
+
+.scrollToTop
+    width: 5vmin
+    height: 5vmin
+    border-radius: 100%
+    background: $base-color
+    position: fixed
+    bottom: 4vh
+    right: 3vw
+    border: none
+    color: white
+    cursor: pointer
+    transition: 200ms ease-in-out
+.scrollToTop > *
+    font-size: 3vmin !important
+
+.scrollToTop:hover
+    background: white
+    color: $base-color
