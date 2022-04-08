@@ -137,6 +137,11 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.wrapper #game canvas {
+  background: red;
+  height: 600px;
+  width: 1000px;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
