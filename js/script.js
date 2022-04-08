@@ -13,9 +13,6 @@ const select = document.querySelector(".select")
 const game = document.getElementById("game")
 
 let btnCenter = title.offsetWidth/2 - start.offsetWidth/2
-console.log(btnCenter);
-console.log(title.offsetWidth);
-console.log(start.offsetWidth);
 
 
 title.addEventListener("mouseover", (e)=>{
