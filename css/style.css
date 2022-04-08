@@ -131,6 +131,12 @@ body {
   color: rgb(103, 9, 29);
   background: white;
 }
+.wrapper #game {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 ::-webkit-scrollbar {
   width: 10px;

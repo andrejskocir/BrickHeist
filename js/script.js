@@ -10,7 +10,7 @@ const easy = document.getElementById("easy")
 const medium = document.getElementById("medium")
 const hard = document.getElementById("hard")
 const select = document.querySelector(".select")
-
+const game = document.getElementById("game")
 
 let btnCenter = title.offsetWidth/2 - start.offsetWidth/2
 console.log(btnCenter);
@@ -33,14 +33,7 @@ title.addEventListener("mouseleave", (e)=>{
     start.style.transition = "750ms ease-in-out"
 })
 
-start.addEventListener("click", ()=>{
-    difficulty.style.display = "flex"
-    window.scrollTo({
-        top: title.offsetHeight*2,
-        left: 100,
-        behavior: 'smooth'
-      });
-})
+
 
 easy.addEventListener("click", ()=>{
     easy.classList.add("active")
@@ -66,7 +59,25 @@ hard.addEventListener("click", ()=>{
 })
 
 select.addEventListener("click", ()=>{
-    
+    game.style.display = "flex"
+    window.scrollTo({
+        top: container.offsetHeight*2,
+        left: 100,
+        behavior: 'smooth'
+      });
+      setTimeout(function(){
+        difficulty.style.display = "none"
+      },750)
+      
+})
+start.addEventListener("click", ()=>{
+  difficulty.style.display = "flex"
+  game.style.display = "none"
+  window.scrollTo({
+      top: title.offsetHeight*2,
+      left: 100,
+      behavior: 'smooth'
+    });
 })
 
 //Get the button
