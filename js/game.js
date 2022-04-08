@@ -43,13 +43,13 @@ function drawIt() {
     
     function drawImage(x,y) {
       var tnt = new Image(100,100)
-      tnt.src = "../img/tnt.png"
+      tnt.src = "./img/tnt.png"
       ctx.drawImage(tnt, x, y, tntWidth , tntHeight)
     }
 
     function init_icon() {
         var icon = new Image(iconW,iconH)
-        icon.src = "../img/character.png"
+        icon.src = "./img/character.png"
         iconX = WIDTH / 2;
         ctx.drawImage(icon, iconX, HEIGHT-iconH, iconW, iconH)
       }
