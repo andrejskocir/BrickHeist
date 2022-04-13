@@ -138,7 +138,7 @@ body {
   flex-direction: column;
 }
 .wrapper #game canvas {
-  background: green;
+  background: rgba(255, 0, 0, 0.2);
 }
 
 ::-webkit-scrollbar {

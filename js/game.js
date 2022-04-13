@@ -21,7 +21,7 @@ var leftDown = false;
 var canvasMinX;
 var canvasMaxX;
 var bricks;
-var NROWS = 6;
+var NROWS = 5;
 var NCOLS = 10;
 var PADDING = 1.5;
 //var BRICKWIDTH = 100;
@@ -89,8 +89,8 @@ function init_mouse() {
 
 
 function onMouseMove(evt) {
-  if (evt.pageX > canvasMinX && evt.pageX < canvasMaxX) {
-    paddlex = evt.pageX - (screen.width - WIDTH)/2 - paddlew/2
+  if (evt.pageX - $('#canvas').offset().left - paddlew/2 > 0 && evt.pageX - $('#canvas').offset().left + paddlew/2 < WIDTH ) {
+    paddlex = evt.pageX - $('#canvas').offset().left - paddlew/2
   }
 }
 $(document).mousemove(onMouseMove)
@@ -128,13 +128,8 @@ function init() {
 }
 
 
-
-function drawImage(x,y) {
   var tnt = new Image(100,100)
   tnt.src = "./img/tnt.png"
-  ctx.drawImage(tnt, x, y, tntWidth , tntHeight)
-}
-
 
 
 
@@ -142,6 +137,7 @@ function rect(x,y,w,h) {
   ctx.beginPath();
   ctx.rect(x,y,w,h);
   ctx.closePath();
+  ctx.fillStyle = "red"
   ctx.fill();
 }
 
@@ -208,7 +204,7 @@ function checkTable(){
 //END LIBRARY CODE
 function draw() {
 	clear();
-	drawImage(x,y);
+  ctx.drawImage(tnt, x, y, tntWidth, tntHeight)
 	rect(paddlex, HEIGHT-paddleh, paddlew, paddleh);
 	//premik ploščice levo in desno
 	if(rightDown){
