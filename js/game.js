@@ -287,7 +287,7 @@ function drawIt() {
     clearInterval(intTimer);
     clearInterval(drawInterval);
     totalScore = Math.floor((tocke * 1000) / sekunde);
-    swal({
+    swal.fire({
       title: "you won!",
       icon: "success",
       text: "Score: " + totalScore,
@@ -304,12 +304,28 @@ function drawIt() {
     $("#zivljenja").html("0");
     clearInterval(intTimer);
     clearInterval(drawInterval);
-    swal({
+    swal.fire({
       title: "game over",
       icon: "error",
       button: "want to play again?",
     }).then((value) => {
-      location.reload();
+		/**************************/
+		difficulty.style.display = "flex"
+		select.style.visibility = "hidden"
+		hard.classList.remove("active")
+		medium.classList.remove("active")
+		easy.classList.remove("active")
+		window.scrollTo({
+			top: container.offsetHeight,
+			left: 100,
+			behavior: 'smooth'
+		  });
+		setTimeout(function(){
+			game.style.display = "none"
+		  },750)
+
+
+	  	/**************************/
     });
     dy = 0;
   }

@@ -56,6 +56,7 @@ hard.addEventListener("click", ()=>{
 })
 
 select.addEventListener("click", ()=>{
+
     game.style.display = "flex"
     window.scrollTo({
         top: container.offsetHeight*2,
@@ -65,7 +66,7 @@ select.addEventListener("click", ()=>{
       setTimeout(function(){
         difficulty.style.display = "none"
       },750)
-      
+    drawIt()
 })
 start.addEventListener("click", ()=>{
   difficulty.style.display = "flex"
