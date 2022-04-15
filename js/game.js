@@ -23,12 +23,12 @@ var canvasMaxX;
 var bricks;
 var NROWS = 5;
 var NCOLS = 10;
-var PADDING = 1.5;
+var PADDING = 3;
 //var BRICKWIDTH = 100;
 var BRICKWIDTH = (WIDTH/NCOLS) - PADDING;
 
 
-var BRICKHEIGHT = 40;
+var BRICKHEIGHT = 50;
 var pause=false;
 var start=false;
 
@@ -47,7 +47,7 @@ var izpisTimer;
 var twenty = new Image()
 var hundred = new Image()
 var Fhundred = new Image()
-twenty.src = "./img/20.jpg"
+twenty.src = "./img/20_1_50.jpeg"
 hundred.src = "./img/100.jpg"
 Fhundred.src = "./img/500.jpg"
 
@@ -89,7 +89,7 @@ function init_mouse() {
 
 
 function onMouseMove(evt) {
-  if (evt.pageX - $('#canvas').offset().left - paddlew/2 > 0 && evt.pageX - $('#canvas').offset().left + paddlew/2 < WIDTH ) {
+  if (evt.pageX - $('#canvas').offset().left - paddlew/2 + f/2 > 0 && evt.pageX - $('#canvas').offset().left + paddlew/2 - f/2 < WIDTH ) {
     paddlex = evt.pageX - $('#canvas').offset().left - paddlew/2
   }
 }
@@ -117,7 +117,7 @@ function initbricks() {
 function init() {
 
   x=WIDTH/2;
-  y=HEIGHT/2.51;
+  y=HEIGHT/2.15 ;
   tocke = 0;
   $("#tocke").html(tocke);
   $("#zivljenja").html(zivljenja);
@@ -246,8 +246,16 @@ function draw() {
 	//Če smo zadeli opeko, vrni povratno kroglo in označi v tabeli, da opeke ni več
 	//štetje zadetih opek
 	if (y < NROWS * rowheight && row >= 0 && col >= 0 &&( bricks[row][col] == 1 || bricks[row][col] == 2 || bricks[row][col] == 3)) {
-		dy = -dy; 
-		tocke += bricks[row][col];
+		dy = -dy;
+		switch(bricks[row][col]){
+			case 3: tocke += 400
+			break
+			case 2: tocke += 80;
+			break
+			case 1: tocke += 20;
+			break
+
+		}
 		bricks[row][col] -= 1;
 		$("#tocke").html(tocke);
 	}

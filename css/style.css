@@ -140,6 +140,14 @@ body {
 .wrapper #game canvas {
   background: rgba(255, 0, 0, 0.2);
 }
+.wrapper #game .info {
+  color: white;
+  font-size: 6vmin;
+  display: flex;
+}
+.wrapper #game .info > * {
+  margin: 2vmin;
+}
 
 ::-webkit-scrollbar {
   width: 10px;
