@@ -151,11 +151,12 @@ body {
 .wrapper #game .info > * {
   margin: 2vmin;
   font-size: 4vmin;
-  width: 33%;
 }
 .wrapper #game .inner {
   display: flex;
   margin: 1vmin;
+  justify-content: center;
+  width: 33%;
 }
 .wrapper #game .inner h2 {
   display: inline;
