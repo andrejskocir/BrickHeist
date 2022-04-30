@@ -11,6 +11,8 @@ const medium = document.getElementById("medium")
 const hard = document.getElementById("hard")
 const select = document.querySelector(".select")
 const game = document.getElementById("game")
+let risanje
+let level;
 
 let btnCenter = title.offsetWidth/2 - start.offsetWidth/2
 
@@ -56,6 +58,12 @@ hard.addEventListener("click", ()=>{
 })
 
 select.addEventListener("click", ()=>{
+  if(easy.classList.contains("active"))
+    level = 1
+  else if (medium.classList.contains("active"))
+    level = 2
+  else
+    level = 3
 
     game.style.display = "flex"
     window.scrollTo({
@@ -95,4 +103,9 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+  easy.classList.remove("active")
+  medium.classList.remove("active")
+  hard.classList.remove("active")
+
+  location.reload()
 }

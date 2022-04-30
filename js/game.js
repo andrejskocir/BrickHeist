@@ -89,9 +89,23 @@ function drawIt() {
     for (i = 0; i < NROWS; i++) {
       bricks[i] = new Array(NCOLS);
       for (j = 0; j < NCOLS; j++) {
-        if (i == 0) bricks[i][j] = 3;
-        else if (i == 1 || i == 2) bricks[i][j] = 2;
-        else bricks[i][j] = 1;
+        console.log(level)
+        //odvisno glede na izbiro
+        switch(level){
+          case 1:
+            if (i == 0 || i == 1 || i == 2) bricks[i][j] = 2;
+            else bricks[i][j] = 1;
+            break;
+          case 2:
+            if (i == 0) bricks[i][j] = 3;
+            else if (i == 1 || i == 2) bricks[i][j] = 2;
+            else bricks[i][j] = 1;
+            break;
+          case 3:
+            if (i == 0 || i == 1 || i == 2) bricks[i][j] = 3;
+            else bricks[i][j] = 2;
+            break;
+        }
       }
     }
   }
@@ -329,6 +343,7 @@ function drawIt() {
     });
     dy = 0;
   }
+  
 
   drawInterval = init();
   init_paddle();
