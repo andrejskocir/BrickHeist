@@ -46,6 +46,10 @@ function drawIt() {
   twenty.src = "./img/20_1_50.jpeg";
   hundred.src = "./img/100.jpg";
   Fhundred.src = "./img/500.jpg";
+  let cash = new Audio("../audio/cash.mp3")
+  let lose = new Audio("../audio/lose.m4a")
+
+
 
   //nastavljanje leve in desne tipke
   function onKeyDown(evt) {
@@ -238,12 +242,13 @@ function drawIt() {
     col = Math.floor(x / colwidth);
     //Če smo zadeli opeko, vrni povratno kroglo in označi v tabeli, da opeke ni več
     //štetje zadetih opek
-    if (
-      y < NROWS * rowheight &&
+    if 
+      (y < NROWS * rowheight &&
       row >= 0 &&
       col >= 0 &&
-      (bricks[row][col] == 1 || bricks[row][col] == 2 || bricks[row][col] == 3)
+      (bricks[row][col] >= 1 )
     ) {
+      cash.play()
       dy = -dy;
       switch (bricks[row][col]) {
         case 3:
@@ -265,7 +270,7 @@ function drawIt() {
     }
 
     //odboj
-    if (x + dx > WIDTH || x + dx < 0) dx = -dx
+    if (x + dx > WIDTH - tntWidth/2 || x + dx < 0) dx = -dx
     if (y + dy < 0) dy = -dy
     else if (
       y + dy > HEIGHT - (paddleh + f) &&
@@ -273,15 +278,16 @@ function drawIt() {
     ) {
 
 
-      if (x > paddlex && x < paddlex + paddlew) {
-        dx = 8 * ((x - (paddlex + paddlew / 2)) / paddlew)
+      if (x > paddlex && x < paddlex + paddlew*2) {
+        dx = (level+7) * ((x - (paddlex + paddlew / 2)) / paddlew)
         dy = -dy
-        if (y + dy > HEIGHT - (paddleh + f) && y + dy < HEIGHT - (r + f)) {
+        if (y + dy > HEIGHT - (paddleh + f) && y + dy < HEIGHT - (tntHeight/2 + f)) {
           dx = -dx
           dy = -dy
         }
       }
     } else if (y + dy > HEIGHT) {
+      lose.play()
       if (zivljenja == 1) konec()
       else {
         zivljenja--
@@ -302,12 +308,25 @@ function drawIt() {
     clearInterval(drawInterval);
     totalScore = Math.floor((tocke * 1000) / sekunde);
     swal.fire({
-      title: "you won!",
+      title: "VICTORY!",
       icon: "success",
-      text: "Score: " + totalScore,
-      button: "retry!",
+      text: "MONEY: " + tocke,
+      confirmButtonColor: "rgb(103, 9, 29)",
+      
     }).then((value) => {
-      location.reload();
+      difficulty.style.display = "flex"
+      select.style.visibility = "hidden"
+      hard.classList.remove("active")
+      medium.classList.remove("active")
+      easy.classList.remove("active")
+      window.scrollTo({
+        top: container.offsetHeight,
+        left: 100,
+        behavior: 'smooth'
+        });
+      setTimeout(function(){
+        game.style.display = "none"
+        },750)
     });
     x = 275;
     y = 150;
@@ -319,11 +338,13 @@ function drawIt() {
     clearInterval(intTimer);
     clearInterval(drawInterval);
     swal.fire({
-      title: "game over",
+      title: "GAME OVER",
       icon: "error",
-      button: "want to play again?",
+      confirmButtonColor: "rgb(103, 9, 29)",
+
     }).then((value) => {
-		/**************************/
+      location.reload()
+		/**************************
 		difficulty.style.display = "flex"
 		select.style.visibility = "hidden"
 		hard.classList.remove("active")
@@ -334,19 +355,23 @@ function drawIt() {
 			left: 100,
 			behavior: 'smooth'
 		  });
-		setTimeout(function(){
-			game.style.display = "none"
-		  },750)
 
-
-	  	/**************************/
+	  	**************************/
     });
     dy = 0;
   }
+
+
   
 
   drawInterval = init();
   init_paddle();
   init_mouse();
   initbricks();
+}
+
+function koncaj() {
+  $("#zivljenja").html("0");
+  clearInterval(intTimer);
+  clearInterval(drawInterval);
 }

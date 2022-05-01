@@ -76,7 +76,11 @@ select.addEventListener("click", ()=>{
       },750)
     drawIt()
 })
+let song = new Audio("../audio/song.mp3")
+song.volume = 0.2
 start.addEventListener("click", ()=>{
+  song.play()
+  song.loop= true
   difficulty.style.display = "flex"
   game.style.display = "none"
   window.scrollTo({
@@ -101,11 +105,12 @@ function scrollFunction() {
 }
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-  easy.classList.remove("active")
-  medium.classList.remove("active")
-  hard.classList.remove("active")
 
-  location.reload()
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    easy.classList.remove("active")
+    medium.classList.remove("active")
+    hard.classList.remove("active")
+
+
 }

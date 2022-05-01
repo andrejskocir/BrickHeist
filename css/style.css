@@ -72,7 +72,7 @@ body {
   align-items: center;
 }
 .wrapper #difficulty .choices > div .photos {
-  width: max(100px, 20vw);
+  height: max(100px, 20vh);
   cursor: pointer;
   transition: 200ms ease-in-out;
   z-index: 2;
