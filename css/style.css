@@ -230,11 +230,11 @@ body {
 }
 
 .icons:nth-of-type(2) {
-  left: 9vw;
+  left: 8vw;
 }
 
 .icons:nth-of-type(3), .icons:nth-of-type(4) {
-  left: 15vw;
+  left: 13vw;
   text-align: center;
 }
 
