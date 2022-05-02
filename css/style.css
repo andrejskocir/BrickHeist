@@ -212,8 +212,8 @@ body {
 }
 
 .icons {
-  height: 8vmin;
-  width: 8vmin;
+  height: 6vmin;
+  width: 6vmin;
   border-radius: 50%;
   border: 5px solid rgb(103, 9, 29);
   background: rgb(103, 9, 29);
@@ -245,25 +245,25 @@ body {
 #up {
   display: block;
   color: white;
-  font-size: 5vmin;
+  font-size: 4vmin;
   text-shadow: 0 0 0.125em hsla(0deg, 0%, 100%, 0.3), 0 0 0.45em rgb(103, 9, 29);
   position: absolute;
-  top: 1.5vmin;
-  left: 1.5vmin;
+  top: 1vmin;
+  left: 1vmin;
 }
 
 #off {
-  font-size: 5vmin;
+  font-size: 4vmin;
   color: white;
   text-shadow: 0 0 0.125em hsla(0deg, 0%, 100%, 0.3), 0 0 0.45em rgb(103, 9, 29);
   position: absolute;
-  top: 1.5vmin;
-  left: 1.5vmin;
+  top: 1vmin;
+  left: 1vmin;
 }
 
 .icons p {
   color: white;
-  font-size: 2.5em;
+  font-size: 4vmin;
   font-weight: 600;
 }
 
