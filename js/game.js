@@ -48,8 +48,8 @@ function drawIt() {
   twenty.src = "./img/20_1_50.jpeg";
   hundred.src = "./img/100.jpg";
   Fhundred.src = "./img/500.jpg";
-  let cash = new Audio("../audio/cash.mp3");
-  let lose = new Audio("../audio/lose.m4a");
+  let cash = new Audio("./audio/cash.mp3");
+  let lose = new Audio("./audio/lose.m4a");
 
   //nastavljanje leve in desne tipke
   function onKeyDown(evt) {
@@ -127,7 +127,7 @@ function drawIt() {
   var tnt = new Image(40, 40);
   tnt.src = "./img/tnt.png";
   var tank = new Image(paddleh, paddlew);
-  tank.src = "../img/tank.png";
+  tank.src = "./img/tank.png";
 
 
   function clear() {
