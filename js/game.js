@@ -303,7 +303,7 @@ function drawIt() {
     swal
       .fire({
         title: "VICTORY!",
-        imageUrl: "../img/win.jpg",
+        imageUrl: "./img/win.jpg",
         imageWidth: 400,
         imageHeight: 200,
         text: "MONEY: " + tocke + "€",
@@ -336,7 +336,7 @@ function drawIt() {
     swal
       .fire({
         title: "GAME OVER",
-        imageUrl: "../img/lose.jpg",
+        imageUrl: "./img/lose.jpg",
         imageWidth: 400,
         imageHeight: 200,
         confirmButtonColor: "rgb(103, 9, 29)",
