@@ -42,7 +42,7 @@
             
             <div class = "info">
                 <div class="inner">
-                    <h2>TIME: </h2><h2 id="cas">00:00</h2>
+                    <h2>TIME: </h2><h2 id="cas"></h2>
                 </div>
                 <div class="inner">
 
@@ -55,13 +55,29 @@
                 </div>
             </div>
             <canvas id="canvas" height= "600" width="1000"></canvas>
-            
+            <div class="pauseGame">
+                <div class="part"></div>
+                <div class="part"></div>
+
+            </div>
         </div>
+        <div class="credentials">
+            <div class="icons">
+                <p>i</p>
+            </div>
+            <div class="icons" id="copy">
+                <p>&copy;</p>
+            </div>
+            <div class="icons" id="play" onclick="stopSong()"><span id="up" class="material-icons-outlined">volume_up</span></div>
+            <div class="icons" id="pause" onclick="playSong()"><span id="off" class="material-icons-outlined">volume_off</span>
+            </div> 
         <button class="scrollToTop" onclick="topFunction()"><span class="material-icons-outlined">
             expand_less
             </span></button>
+        
     </div>
 
+    <div class="backdrop"></div>
 
 </body>
 <script src="js/jquery.min.js" ></script>

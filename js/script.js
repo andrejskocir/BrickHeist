@@ -15,7 +15,7 @@ let risanje
 let level;
 
 let btnCenter = title.offsetWidth/2 - start.offsetWidth/2
-
+let cash = new Audio("../audio/cash.mp3")
 
 title.addEventListener("mouseover", (e)=>{
     first.style.transform = "translateY(-35%)"
@@ -76,11 +76,9 @@ select.addEventListener("click", ()=>{
       },750)
     drawIt()
 })
-let song = new Audio("../audio/song.mp3")
-song.volume = 0.2
+
 start.addEventListener("click", ()=>{
-  song.play()
-  song.loop= true
+
   difficulty.style.display = "flex"
   game.style.display = "none"
   window.scrollTo({
@@ -105,12 +103,54 @@ function scrollFunction() {
 }
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-
+  location.reload()
+  /*
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
     easy.classList.remove("active")
     medium.classList.remove("active")
     hard.classList.remove("active")
-
+*/
 
 }
+let song = new Audio("../audio/song.mp3")
+song.volume = 0.2
+function playSong() {
+  song.play()
+  song.loop= true
+  document.getElementById("play").style.display = "block";
+  document.getElementById("pause").style.display = "none";
+}
+function stopSong() {
+  song.pause();
+  document.getElementById("play").style.display = "none";
+  document.getElementById("pause").style.display = "block";
+}
+
+const icons = document.querySelector(".icons");
+const copy = document.getElementById("copy");
+
+icons.addEventListener("click", (e) => {
+  cash.play()
+  swal.fire({
+    title: "<h2 style='color:white'>Instructions</h2>",
+    background: "rgb(103, 9, 29)",
+    confirmButtonColor: '#353535',
+    html: "<p style='color:white; text-align: left; font-size: 3vmin; letter-spacing: 0.1vmin; padding: 0 1vmin;'>Choose your difficulty out of the three given options.<br>In order to win you must break all the bricks.<br>To move use the mouse or left and right arrow on your keyboard.<br>You can also pause the game with the letter P on your keyboard.<br>Good luck!</p>",
+  });
+})
+
+
+copy.addEventListener("click", (e) => {
+  cash.play()
+  swal.fire({
+    title: "<h2 style='color:white'>Credits</h2>",
+    html: "<h3 style='color:white;letter-spacing: 0.1vmin;'>Made by Andrej Skočir</h3>",
+    background: "rgb(103, 9, 29)",
+    customClass: {
+      confirmButton: 'no-border',
+    },
+    confirmButtonColor: '#353535',
+  });
+
+})

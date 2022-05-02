@@ -21,6 +21,7 @@ body {
 
 .active {
   transform: translateY(-35%);
+  filter: drop-shadow(0 0 0.75rem white) saturate(120%) !important;
 }
 
 .wrapper {
@@ -76,9 +77,19 @@ body {
   cursor: pointer;
   transition: 200ms ease-in-out;
   z-index: 2;
+  filter: saturate(120%);
 }
-.wrapper #difficulty .choices > div .photos:hover {
+.wrapper #difficulty .choices > div #easy:hover {
   transform: translateY(-35%);
+  filter: drop-shadow(0 0 0.75rem #82ADC6) saturate(120%);
+}
+.wrapper #difficulty .choices > div #medium:hover {
+  transform: translateY(-35%);
+  filter: drop-shadow(0 0 0.75rem #459200) saturate(120%);
+}
+.wrapper #difficulty .choices > div #hard:hover {
+  transform: translateY(-35%);
+  filter: drop-shadow(0 0 0.75rem #CE66A4) saturate(120%);
 }
 .wrapper #difficulty .choices > div h2 {
   color: white;
@@ -198,6 +209,98 @@ body {
 .scrollToTop:hover {
   background: white;
   color: rgb(103, 9, 29);
+}
+
+.icons {
+  height: 8vmin;
+  width: 8vmin;
+  border-radius: 50%;
+  border: 5px solid rgb(103, 9, 29);
+  background: rgb(103, 9, 29);
+  box-shadow: inset 0 0 0.5em 0 rgb(103, 9, 29), 0 0 0.5em 0 rgb(103, 9, 29);
+  position: absolute;
+  left: 3vw;
+  bottom: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.icons:nth-of-type(2) {
+  left: 9vw;
+}
+
+.icons:nth-of-type(3), .icons:nth-of-type(4) {
+  left: 15vw;
+  text-align: center;
+}
+
+#play {
+  display: none;
+}
+
+#up {
+  display: block;
+  color: white;
+  font-size: 5vmin;
+  text-shadow: 0 0 0.125em hsla(0deg, 0%, 100%, 0.3), 0 0 0.45em rgb(103, 9, 29);
+  position: absolute;
+  top: 1.5vmin;
+  left: 1.5vmin;
+}
+
+#off {
+  font-size: 5vmin;
+  color: white;
+  text-shadow: 0 0 0.125em hsla(0deg, 0%, 100%, 0.3), 0 0 0.45em rgb(103, 9, 29);
+  position: absolute;
+  top: 1.5vmin;
+  left: 1.5vmin;
+}
+
+.icons p {
+  color: white;
+  font-size: 2.5em;
+  font-weight: 600;
+}
+
+.icons:hover {
+  opacity: 1;
+  transition: 250ms ease;
+}
+
+.swal2-title {
+  color: white;
+}
+
+.pauseGame {
+  visibility: hidden;
+  width: 10vw;
+  height: 20vh;
+  position: absolute;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pauseGame .part {
+  width: 4vw;
+  height: 100%;
+  background: white;
+  box-shadow: inset 0 0 0.5em 0 white, 0 0 0.5em 0 white;
+}
+
+.backdrop {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 100vh;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /*# sourceMappingURL=style.css.map */
