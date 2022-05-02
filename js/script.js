@@ -15,7 +15,7 @@ let risanje
 let level;
 
 let btnCenter = title.offsetWidth/2 - start.offsetWidth/2
-let cash = new Audio("../audio/cash.mp3")
+let cash = new Audio("./audio/cash.mp3")
 
 title.addEventListener("mouseover", (e)=>{
     first.style.transform = "translateY(-35%)"
@@ -113,7 +113,7 @@ function topFunction() {
 */
 
 }
-let song = new Audio("../audio/song.mp3")
+let song = new Audio("./audio/song.mp3")
 song.volume = 0.2
 function playSong() {
   song.play()
